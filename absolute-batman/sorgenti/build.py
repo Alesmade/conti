@@ -10,7 +10,7 @@ cpg=L('cpg.json',[]); bc=L('bc.json',{}); extra=L('extra.json',{})
 M="https://media.comicade.com/"
 c26=[["26","Nick Dragotta","Principale","133863/conversions/media-libraryTx7dE3-thumb.jpg","D"],["26B","Cliff Chiang","Card Stock Cover","133862/conversions/media-libraryYevwnD-thumb.jpg","D"],["26C","JeeHyung Lee","Card Stock Cover","133865/conversions/media-libraryqPDmkI-thumb.jpg","D"],["26D","Chuma Hill","Card Stock Cover","133864/conversions/media-libraryIphBid-thumb.jpg","D"],["26E","Nick Dragotta","Foil Cover","","D"],["26-RI","Stephen Green","1:25 Ratio","133866/conversions/media-libraryfV4g1c-thumb.jpg","R"],["26G","DC Worlds Collide","Card Stock Cover","133885/conversions/media-libraryiSOEqn-thumb.jpg","D"]]
 rows=[];have=set()
-def slug(n,name): return f"{n}-"+re.sub(r'[^a-z0-9]+','-',name.lower()).strip('-')[:70]
+def slug(n,name): return f"{n}-"+re.sub(r'[^a-z0-9]+','-',name.lower()).strip('-')
 for n,code,id_,sec,sub,art,store,has in cpg:
     if sec=='E' and str(n) in bc: continue
     reprint=bool(re.search(r'-\d+(st|nd|rd|th)\b',code))
