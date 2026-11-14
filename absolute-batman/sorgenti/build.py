@@ -12,7 +12,7 @@ c26=[["26","Nick Dragotta","Principale","133863/conversions/media-libraryTx7dE3-
 rows=[];have=set()
 def slug(n,name): return f"{n}-"+re.sub(r'[^a-z0-9]+','-',name.lower()).strip('-')
 for n,code,id_,sec,sub,art,store,has in cpg:
-    if sec=='E' and str(n) in bc: continue
+    if sec=='E' and (str(n) in bc or any(x[2]=='E' for x in extra.get(str(n),[]))): continue
     reprint=bool(re.search(r'-\d+(st|nd|rd|th)\b',code))
     g={'M':'D','R':'R','E':'E'}.get(sec,'P' if reprint else 'D')
     rows.append([n,code,g,sub,art,store,"https://www.comicspriceguide.com/image/piqqmt/"+id_]); have.add(n)
